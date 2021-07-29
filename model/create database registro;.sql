@@ -11,3 +11,5 @@ CREATE TABLE `reg`.`t_registro` (
   PRIMARY KEY (`id_registro`));
 ALTER TABLE `reg`.`t_registro` 
 ADD COLUMN `sexo` VARCHAR(45) NOT NULL AFTER `especualidad`;
+ALTER TABLE `reg`.`t_registro` 
+ADD COLUMN `nombreArchivo` VARCHAR(45) NOT NULL AFTER `sexo`;

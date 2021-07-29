@@ -14,7 +14,7 @@
     require_once 'conexion.php';
     $conexion = conexion(); 
 
-    $sql = "INSERT INTO t_registro (nombre,apellidoP,apeliidoM,matricula,fecha,espacialidad,sexo) VALUES ('$nombre','$apellidoP','$apellidoM','$matricula','$fecha','$especialidad','$sexo')";
+    $sql = "INSERT INTO t_registro (nombre,apellidoP,apeliidoM,matricula,fecha,espacialidad,sexo,nombreArchivo) VALUES ('$nombre','$apellidoP','$apellidoM','$matricula','$fecha','$especialidad','$sexo','$nombreArchivo')";
     $resultado = mysqli_query($conexion,$sql);
 
 

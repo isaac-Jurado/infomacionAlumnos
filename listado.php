@@ -2,7 +2,7 @@
 <?php
     include "servidor/conexion.php";
     $conexion = conexion();
-    $sql = "SELECT id_registro,nombre,apellidoP,apeliidoM,matricula,fecha,espacialidad,sexo FROM t_registro";
+    $sql = "SELECT * FROM t_registro";
     $resultado = mysqli_query($conexion, $sql);
 ?>
 
@@ -48,7 +48,12 @@
                              ?> </td>
                          <td class="text-center"> <?php echo $ver['espacialidad'];    ?>  </td>    
                         <td class="text-center"> <?php echo $ver['sexo'] ; ?> </td>
-                        <TD></TD>
+                        <TD> <?php
+                            $nombre = $ver['nombreArchivo'];
+                            $cadenaImagen='';
+                            $cadenaImagen = '<img src=' . './archivo/' . $nombre. ' width="50px" height="50px">';
+                            echo '<a href="visualizarFull.php?nombre=' . $nombre . '" target="_blank"> ' . $cadenaImagen . ' </a>';
+                        ?></TD>
                         <td class="text-center">
                             <form action="actualizar.php" method="POST">
                                 <input type="text" hidden name="idRegistro" value="<?php echo $ver['id_registro']?>">
